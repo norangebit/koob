@@ -6,5 +6,6 @@ setup(
     package_dir={'': 'src'},
     author='norangebit',
     description='A CLI utility to extract information from Kobo db',
-    entry_points={'console_scripts': ['koob = koob.main:main']}
+    entry_points={'console_scripts': ['koob = koob.cli:koob']},
+    install_requires=['click', 'blkinfo']
 )

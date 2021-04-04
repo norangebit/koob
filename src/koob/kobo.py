@@ -85,8 +85,8 @@ class KoboDb:
 
         cursor = self.__connection \
             .execute("select BookmarkId, BookTitle, Title, Text, Bookmark.DateCreated "
-                     "from Bookmark left join content content.ContentID like Bookmark.ContentID|| '%' "
-                     "where ContentType = 899 and Text != ''"
+                     "from Bookmark left join content on content.ContentID like Bookmark.ContentID|| '%' "
+                     "where ContentType = 899 and Text != ''",
                      )
 
         return [Highlight(row[0], row[1], row[2], row[3]) for row in cursor]

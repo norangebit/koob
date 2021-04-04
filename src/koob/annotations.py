@@ -26,7 +26,7 @@ def get_highlights(book_title: Optional[str], db: Optional[str], last: bool) -> 
     elif last:
         return db.get_last_highlights()
     else:
-        db.get_all_highlights()
+        return db.get_all_highlights()
 
 
 def group_by_chapter(highlights: List[Highlight]) -> Dict[str, Highlight]:
